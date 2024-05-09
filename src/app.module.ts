@@ -1,11 +1,25 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { EventsModule } from './events/events.module'; // Importe o módulo de eventos
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { EventsModule } from './events/events.module';
+import { HousesModule } from './houses/houses.module';
+import { ArtistsModule } from './artists/artists.module';
 
 @Module({
-  imports: [EventsModule], 
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'Ducilio199@',
+      database: 'vitrin_events',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
+      logging: false,
+    }),
+    HousesModule,
+    ArtistsModule,
+    EventsModule,
+  ],
 })
 export class AppModule {}
