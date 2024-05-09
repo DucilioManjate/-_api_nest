@@ -7,11 +7,11 @@ import { JwtStrategy } from 'src/jwt/jwt.guard';
 @Module({
   imports: [
     JwtModule.register({
-      secret: 'your-secret-key', // Chave secreta para assinar o token JWT
+      secret: 'my-secret-key', // Chave secreta para assinar o token JWT
       signOptions: { expiresIn: '1h' }, // Opções de assinatura do token JWT
     }),
   ],
   providers: [AuthService, JwtStrategy],
-  exports: [AuthService], // Exporte o AuthService para ser utilizado por outros módulos
+  exports: [AuthService], 
 })
 export class AuthModule {}
