@@ -8,7 +8,7 @@ import { ArtistsModule } from './artists/artists.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'mysql',  
       port: 3306,
       username: 'root',
       password: 'Ducilio199@',
