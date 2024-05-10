@@ -15,7 +15,7 @@ export class Artist {
   @Column()
   contato: string;
 
-  @Column('text')
+  @Column({ type: 'text' }) 
   biografia: string;
 
   @Column()

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"  # Mapeamento da porta do contêiner para a porta do host (opcional)
+    environment:
+      - POSTGRES_USER=root  # ou o nome de usuário desejado
+      - POSTGRES_PASSWORD=Ducilio199@
+      - POSTGRES_DB=vitrin_events
